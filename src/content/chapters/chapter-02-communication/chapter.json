@@ -1,0 +1,17 @@
+{
+  "id": "chapter-02-communication",
+  "number": 2,
+  "title": "Communication",
+  "overview": "overview.md",
+  "modules": [
+    {"id": "module-01", "number": 1, "title": "Define the Communication Requirements", "file": "module-01.md"},
+    {"id": "module-02", "number": 2, "title": "Decide Where Data and Processing Live", "file": "module-02.md"},
+    {"id": "module-03", "number": 3, "title": "Build a Topology That Survives Failure", "file": "module-03.md"},
+    {"id": "module-04", "number": 4, "title": "Choose the Communication Medium", "file": "module-04.md"},
+    {"id": "module-05", "number": 5, "title": "Turn the Design into Real Network Hardware", "file": "module-05.md"},
+    {"id": "module-06", "number": 6, "title": "Give Every Network and Device an Address", "file": "module-06.md"},
+    {"id": "module-07", "number": 7, "title": "Make Local Transmission Reliable", "file": "module-07.md"},
+    {"id": "module-08", "number": 8, "title": "Trace “URL Typed → Web Page Appears”", "file": "module-08.md"},
+    {"id": "module-09", "number": 9, "title": "Prove the Network Can Deliver Real Services", "file": "module-09.md"}
+  ]
+}

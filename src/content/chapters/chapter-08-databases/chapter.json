@@ -1,0 +1,58 @@
+{
+  "id": "chapter-08-databases",
+  "number": 8,
+  "title": "Databases",
+  "description": "Design, normalise, implement, and query a relational database through one continuous school-data problem.",
+  "status": "available",
+  "overview": "overview.md",
+  "modules": [
+    {
+      "id": "module-01",
+      "number": 1,
+      "title": "Why Move from Files to a Database?",
+      "file": "module-01.md"
+    },
+    {
+      "id": "module-02",
+      "number": 2,
+      "title": "Building the Relational Model: Entity, Attribute, Tuple, and Keys",
+      "file": "module-02.md"
+    },
+    {
+      "id": "module-03",
+      "number": 3,
+      "title": "Relationships, Cardinality, and E-R Diagrams",
+      "file": "module-03.md"
+    },
+    {
+      "id": "module-04",
+      "number": 4,
+      "title": "Normalisation: From Raw Data to 3NF",
+      "file": "module-04.md"
+    },
+    {
+      "id": "module-05",
+      "number": 5,
+      "title": "Database Management Systems (DBMS)",
+      "file": "module-05.md"
+    },
+    {
+      "id": "module-06",
+      "number": 6,
+      "title": "SQL DDL: Turning the Design into a Real Database",
+      "file": "module-06.md"
+    },
+    {
+      "id": "module-07",
+      "number": 7,
+      "title": "SQL DML: Adding, Querying, and Modifying Data",
+      "file": "module-07.md"
+    },
+    {
+      "id": "module-08",
+      "number": 8,
+      "title": "Whole-Chapter Integration: From Raw Data to SQL",
+      "file": "module-08.md"
+    }
+  ]
+}
