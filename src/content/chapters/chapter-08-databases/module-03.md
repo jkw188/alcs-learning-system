@@ -36,7 +36,7 @@ However, simply looking at the tables does not clearly answer:
 
 This is the role of **relationships**, **cardinality**, and **E-R diagrams**.
 
-The source material begins this section with four forms of relationship: `1:1`, `1:m`, `m:1`, and `m:m`. fileciteturn0file0L331-L335
+We will work with four forms of relationship: `1:1`, `1:M`, `M:1`, and `M:N`.
 
 ---
 
@@ -44,7 +44,7 @@ The source material begins this section with four forms of relationship: `1:1`, 
 
 ### 1. How is a relationship created?
 
-In a relational database, a relationship exists when one table contains a **foreign key** that refers to the **primary key** of another table. fileciteturn0file0L305-L309
+In a relational database, a relationship exists when one table contains a **foreign key** that refers to the **primary key** of another table.
 
 Example:
 
@@ -89,12 +89,12 @@ many : 1
 many : many
 ```
 
-The source material calls them:
+These are:
 
 - one-to-one
 - one-to-many
 - many-to-one
-- many-to-many. fileciteturn0file0L331-L335
+- many-to-many.
 
 ---
 
@@ -155,7 +155,7 @@ many Students may point to the same Class:
 M : 1
 ```
 
-The source material describes Student–Class as **many-to-one**, because one `ClassID` can appear many times in the Student table but only once in the Class table. fileciteturn0file0L343-L345
+Student–Class can be described as **many-to-one** from the Student side because one `ClassID` can appear many times in the Student table but only once in the Class table.
 
 These two descriptions are **not contradictory**:
 
@@ -308,7 +308,7 @@ SUBJECT
 
 So an M:N relationship is converted into two 1:M relationships.
 
-This is also the structure used later in the chapter during normalisation. fileciteturn0file0L562-L568
+This is also the structure used later in the chapter during normalisation.
 
 ---
 
@@ -322,14 +322,14 @@ We also need to know:
 minimum = 0 or 1?
 ```
 
-The source material gives the following example:
+Consider the following example:
 
 - an Employee has one Desk;
 - however, a Desk may not yet have been allocated to an Employee.
 
-Therefore, for the Desk ↔ Employee relationship, one side can be **zero or one**, meaning the relationship is optional. fileciteturn0file0L369-L375
+Therefore, for the Desk ↔ Employee relationship, one side can be **zero or one**, meaning the relationship is optional.
 
-The source material lists these cardinalities:
+Useful cardinalities include:
 
 ```text
 one
@@ -339,8 +339,6 @@ zero or one
 one or many
 zero or many
 ```
-
-fileciteturn0file0L374-L383
 
 They can be understood using `min..max` notation:
 
@@ -394,9 +392,9 @@ This is why business rules are important.
 
 ### 9. What is an E-R Diagram used for?
 
-The source material defines an E-R diagram as a visual way to document a database design and show the relationships between entities. fileciteturn0file0L350-L368
+An **E-R diagram** is a visual way to document a database design and show the relationships between entities.
 
-Figure 8.3 on page 202 represents:
+A Student–Class E-R representation can be shown as:
 
 ```text
 STUDENT
@@ -470,11 +468,11 @@ This is an extremely important pattern.
 
 ### Step 2 — Class ↔ Teacher
 
-According to Activity 8B in the source material:
+Use this business rule:
 
 > A teacher can have more than one class.
 
-The source material asks us to add a `Teacher` table and modify the Class table accordingly. fileciteturn0file0L389-L398
+We therefore add a `Teacher` table and modify the Class table accordingly.
 
 We have:
 
@@ -857,7 +855,7 @@ Cardinality
 E-R model
 ```
 
-The source material next moves to **Section 8.1.5 – The normalisation process**. This is one of the most important parts of Chapter 8: a large School table that creates redundancy and update problems will be transformed step by step:
+The next step is **normalisation**. A large School table that creates redundancy and update problems will be transformed step by step:
 
 ```text
 Unnormalised
@@ -869,6 +867,6 @@ Unnormalised
      3NF
 ```
 
-and for the first time we will use the concepts **repeating group, composite key, partial dependency, and non-key dependency** in a complete process. fileciteturn0file0L403-L447
+and for the first time we will use the concepts **repeating group, composite key, partial dependency, and non-key dependency** in a complete process.
 
 ---

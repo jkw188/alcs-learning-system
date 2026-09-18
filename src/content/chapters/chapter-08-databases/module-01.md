@@ -25,9 +25,9 @@ This corresponds directly to Sections **8.1.1 and 8.1.2**.
 
 A file can contain many **records**, and each record can contain multiple **fields**. The problem is that the record structure depends on the program that processes the file.
 
-If one program changes the file structure, another program that reads the same type of data may also need to be changed. fileciteturn0file0L58-L69
+If one program changes the file structure, another program that reads the same type of data may also need to be changed.
 
-The source material illustrates this with two programs:
+Consider two programs that store information about the same employee:
 
 **Payroll Program**
 
@@ -48,7 +48,7 @@ Target Sales
 Actual Sales
 ```
 
-Both programs require information about the same employee, but each stores its own separate copy of the data. fileciteturn0file0L135-L162
+Both programs require information about the same employee, but each stores its own separate copy of the data.
 
 ---
 
@@ -76,7 +76,7 @@ multiple copies
 wasted storage
 ```
 
-The source material identifies this as one of the three main limitations of a file-based approach. fileciteturn0file0L163-L169
+This is one of the three main limitations of a file-based approach.
 
 ---
 
@@ -146,7 +146,7 @@ File structure
 
 This is **data dependency**.
 
-The source material explains that the enquiries available may depend on both the data structure and the software being used. fileciteturn0file0L163-L169
+The enquiries available may depend on both the data structure and the software being used.
 
 ---
 
@@ -248,7 +248,7 @@ DATABASE ────┤
 
 Shared data is now managed centrally.
 
-In the example from the source material, an employee's name and staff number only need to be stored once; a change made by the payroll application can then be seen by the sales application, and vice versa. fileciteturn0file0L194-L216
+In a shared database, an employee's name and staff number only need to be stored once; a change made by one application can then be seen by the other applications that use the same data.
 
 Therefore:
 

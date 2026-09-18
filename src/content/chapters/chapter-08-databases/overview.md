@@ -2,7 +2,7 @@
 
 **Chapter 8 – Databases** is built around one continuous problem: designing and implementing a relational database for a school. The chapter covers the file-based approach, relational databases, keys and relationships, E-R diagrams, normalisation to 3NF, DBMSs, DDL, and DML/SQL.
 
-## PROJECT — Rebuilding a School Data System
+## Big Problem — Rebuilding a School Data System
 
 **Context:** the school currently stores information about students, classes, teachers, and subjects in a way that is not well optimised. Our task is to move from **analysing data-storage problems** to a **complete relational database** that can be implemented using SQL.
 

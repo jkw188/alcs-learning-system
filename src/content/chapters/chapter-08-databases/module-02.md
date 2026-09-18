@@ -24,7 +24,7 @@ By the end of this module, you should understand and be able to use:
 - `Referential integrity`
 - `Index`
 
-These terms are introduced directly in Section 8.1.3 of the source material. fileciteturn0file0L217-L227
+These terms form the foundation of the relational model used throughout this chapter.
 
 ---
 
@@ -64,11 +64,11 @@ S1276 | Noor | Baig | 2009-09-22 | 7A
 
 is a **tuple**.
 
-The source material defines:
+Key definitions:
 
 - **Entity**: anything about which data can be stored, for example a person, place, event, or object.
 - **Attribute**: an individual data item belonging to an entity.
-- **Tuple**: one instance of an entity, represented by a row. fileciteturn0file0L240-L252
+- **Tuple**: one instance of an entity, represented by a row.
 
 We can visualise this as:
 
@@ -98,7 +98,7 @@ In this chapter, these terms are closely related:
 | Record / row | Tuple |
 | Field / column | Attribute |
 
-Example from the source material:
+Example:
 
 | StudentID | FirstName | SecondName | DateOfBirth | ClassID |
 |---|---|---|---|---|
@@ -115,7 +115,7 @@ StudentID       → attribute/field/column
 S1276 | Noor... → tuple/record/row
 ```
 
-The source material illustrates this mapping directly: row → record and column → field in the Student table. fileciteturn0file0L220-L234
+In the Student table, the mapping is row → record and column → field.
 
 ### A common point of confusion
 
@@ -166,9 +166,9 @@ Therefore, a relational database needs **keys**.
 
 ### 4. Candidate key
 
-According to the source material:
+A useful definition is:
 
-> A candidate key is an attribute or **smallest set of attributes** for which no two tuples have the same value. fileciteturn0file0L265-L272
+> A candidate key is an attribute or **smallest set of attributes** for which no two tuples have the same value.
 
 Suppose:
 
@@ -202,7 +202,7 @@ Primary key
 
 ### 5. Primary key
 
-A **primary key** is the candidate key chosen to act as the main unique identifier for a table. fileciteturn0file0L265-L270
+A **primary key** is the candidate key chosen to act as the main unique identifier for a table.
 
 Example:
 
@@ -230,7 +230,7 @@ S1277 → exactly one student
 S2199 → exactly one student
 ```
 
-The source material also adds `StudentID` to the Student table so that every student has a unique value. fileciteturn0file0L295-L304
+We use `StudentID` so that every student has a unique identifier.
 
 ---
 
@@ -238,9 +238,9 @@ The source material also adds `StudentID` to the Student table so that every stu
 
 Using the terminology of this chapter:
 
-> A **secondary key** is a candidate key that is not selected as the primary key. fileciteturn0file0L265-L277
+> A **secondary key** is a candidate key that is not selected as the primary key.
 
-The source material uses chemical elements as an example:
+Consider the following chemical-elements example:
 
 ```text
 Symbol | Name       | AtomicWeight
@@ -265,7 +265,7 @@ Name
 AtomicWeight
 ```
 
-using the terminology of the source material. fileciteturn0file0L273-L287
+using the terminology used in this chapter.
 
 ---
 
@@ -310,7 +310,7 @@ STUDENT.ClassID
                        Primary Key
 ```
 
-A **foreign key** is an attribute or set of attributes in one table that refers to the primary key in another table. fileciteturn0file0L305-L314
+A **foreign key** is an attribute or set of attributes in one table that refers to the primary key in another table.
 
 This is the mechanism used to create a relationship.
 
@@ -346,9 +346,9 @@ but class `9Z` does not exist.
 
 This violates **referential integrity**.
 
-According to the source material:
+A useful definition is:
 
-> A database must not contain a foreign-key value that does not match the corresponding primary key. fileciteturn0file0L305-L309
+> A database must not contain a foreign-key value that does not match the corresponding primary key.
 
 A useful way to remember this is:
 
@@ -426,7 +426,7 @@ PK = (StudentID, SubjectName)
 
 This is a **composite key** — a set of attributes that together form the primary key.
 
-The source material uses this exact composite key when the School database is converted to 1NF. fileciteturn0file0L562-L568
+This composite key will be used again when the School database is converted to 1NF.
 
 ---
 
@@ -542,7 +542,7 @@ ClassID | TeacherName | Location
 7C      | Miss Gill   | Floor 2 Room 5
 ```
 
-This is also the Student/Class structure used in the source material to introduce foreign keys. fileciteturn0file0L310-L330
+This Student/Class structure demonstrates how foreign keys create relationships between tables.
 
 ---
 
@@ -623,7 +623,7 @@ no matching CLASS can be found
 
 The chapter also introduces the **index**.
 
-An index is a data structure built from one or more columns in order to **speed up searching**. fileciteturn0file0L343-L349
+An index is a data structure built from one or more columns in order to **speed up searching**.
 
 For example, suppose we frequently need to produce a list:
 

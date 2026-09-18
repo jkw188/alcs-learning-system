@@ -1,8 +1,8 @@
 # Module 4 — Normalisation: From Raw Data to 3NF
 
-This module is one of the core parts of Chapter 8. We will continue using the **School Database** from the source material and transform one large table containing repeated data into a relational database that reaches **Third Normal Form (3NF)**.
+This module is one of the core parts of Chapter 8. We will continue using the **School Database** and transform one large table containing repeated data into a relational database that reaches **Third Normal Form (3NF)**.
 
-The source material defines the purpose of normalisation as reducing **data redundancy** and helping the database maintain **integrity**; tables that are not normalised become harder to update and query as the amount of data increases. fileciteturn0file0L403-L407
+The purpose of normalisation is to reduce **data redundancy** and help the database maintain **integrity**; tables that are not normalised become harder to update and query as the amount of data increases.
 
 ---
 
@@ -80,11 +80,11 @@ Mr Khan
 
 is repeated.
 
-The source material points out three practical problems:
+This design creates three practical problems:
 
 - when a new Student is added, Teacher/Class information must be entered again;
 - if a Teacher changes, every record containing that Teacher may need to be updated;
-- if all Students in Class `7B` leave, the information about Class `7B` may be lost. fileciteturn0file0L435-L440
+- if all Students in Class `7B` leave, the information about Class `7B` may be lost.
 
 This is exactly why normalisation is needed.
 
@@ -92,7 +92,7 @@ This is exactly why normalisation is needed.
 
 ### 2. The three normal forms in this chapter
 
-The source material states:
+The three normal forms used in this chapter are:
 
 ```text
 1NF
@@ -107,11 +107,9 @@ Must already be in 2NF.
 No non-key dependencies.
 ```
 
-fileciteturn0file0L441-L447
-
 A useful way to remember the final goal, used in the chapter, is:
 
-> When a database is in 3NF, attributes depend on **the key, the whole key and nothing but the key**. fileciteturn0file0L453-L454
+> When a database is in 3NF, attributes depend on **the key, the whole key and nothing but the key**.
 
 We will understand this statement one step at a time.
 
@@ -121,7 +119,7 @@ We will understand this statement one step at a time.
 
 ### Step 0 — Unnormalised School Database
 
-The source material adds Subject information for each Student.
+Now add Subject information for each Student.
 
 Example:
 
@@ -161,7 +159,7 @@ SubjectName
 SubjectTeacher
 ```
 
-contain several values inside one Student record. The source material identifies these as **repeating attributes**. fileciteturn0file0L514-L523
+contain several values inside one Student record. These are **repeating attributes**.
 
 ---
 
@@ -205,8 +203,6 @@ This is a repeating group.
 Within the scope of this chapter:
 
 > **Entities do not contain repeated groups of attributes.**
-
-fileciteturn0file0L441-L443
 
 We therefore separate the Subjects.
 
@@ -262,7 +258,7 @@ STUDENTSUBJECT(
 )
 ```
 
-The source material gives these same two tables after the 1NF step. fileciteturn0file0L562-L568
+After the 1NF step, we have these two tables.
 
 ---
 
@@ -320,7 +316,7 @@ is a foreign key referring to:
 STUDENT.StudentID
 ```
 
-The chapter explicitly states this relationship. fileciteturn0file0L562-L568
+The chapter explicitly states this relationship.
 
 ---
 
@@ -421,7 +417,7 @@ as a whole. It depends only on **part** of the composite key:
 SubjectName
 ```
 
-The source material describes exactly this problem. fileciteturn0file0L569-L573
+This is a **partial dependency**.
 
 ---
 
@@ -429,7 +425,7 @@ The source material describes exactly this problem. fileciteturn0file0L
 
 Within the chapter:
 
-> A database must already be in 1NF, and non-key attributes must depend on the primary key; there must be no partial dependencies. fileciteturn0file0L441-L445
+> A database must already be in 1NF, and non-key attributes must depend on the primary key; there must be no partial dependencies.
 
 Therefore, we separate:
 
@@ -469,7 +465,7 @@ SUBJECT(
 )
 ```
 
-This is the 2NF structure given in the source material. fileciteturn0file0L614-L618
+This is the resulting 2NF structure.
 
 ---
 
@@ -573,7 +569,7 @@ They depend on:
 ClassID
 ```
 
-The source material identifies exactly this dependency. fileciteturn0file0L624-L629
+This dependency shows why the design is not yet in 3NF.
 
 ---
 
@@ -609,9 +605,9 @@ This is what 3NF is intended to remove.
 
 ### The 3NF rule
 
-The source material describes 3NF as follows:
+For this chapter, use the following 3NF rule:
 
-> The database is in 2NF and all non-key attributes are independent; there are no non-key dependencies. fileciteturn0file0L445-L447
+> The database is in 2NF and all non-key attributes are independent; there are no non-key dependencies.
 
 We therefore begin separating the data further.
 
@@ -668,13 +664,13 @@ but the chapter identifies a problem:
 
 > Teacher names might not be unique.
 
-The source material therefore suggests using:
+We therefore use:
 
 ```text
 LicenceNumber
 ```
 
-as the Primary Key. fileciteturn0file0L630-L635
+as the Primary Key.
 
 We obtain:
 
@@ -703,7 +699,7 @@ TEACHER 1 ───── M CLASS
 
 ### Step 3.3 — Improve SUBJECT
 
-The source material also recognises that:
+We also need to recognise that:
 
 > Teachers may be both Class Teachers and Subject Teachers.
 
@@ -733,7 +729,7 @@ and let SUBJECT refer to:
 LicenceNumber
 ```
 
-The source material describes the consolidation of teacher information in this way. fileciteturn0file0L630-L635
+This consolidates teacher information into one consistent structure.
 
 We obtain:
 
@@ -748,7 +744,7 @@ SUBJECT(
 
 ## D. Result After Normalisation
 
-Based on Table 8.11, the logical structure is:
+The final logical structure is:
 
 ```text
 STUDENT
@@ -791,19 +787,23 @@ SubjectName      PK
 LicenceNumber    FK
 ```
 
-Table 8.11 on page 206 shows the Student, Teacher, Class, StudentSubject, and Subject tables after the database has been converted to 3NF. fileciteturn0file0L636-L665
+The Student, Teacher, Class, StudentSubject, and Subject tables now form the 3NF design.
 
-### A point to note in the source material itself
+### Design consistency check
 
-On the next page, the text prints:
+A complete relational design must retain:
 
 ```text
-STUDENT(StudentID, FirstName, SecondName, DateOfBirth,)
+STUDENT(
+    StudentID,
+    FirstName,
+    SecondName,
+    DateOfBirth,
+    ClassID
+)
 ```
 
-and then lists the remaining tables. fileciteturn0file0L671-L676
-
-However, **Table 8.11 immediately before this still contains `ClassID` in STUDENT**, and the Student → Class relationship requires `ClassID` as a foreign key. Therefore, the representation in the text appears inconsistent with the preceding table; this inconsistency is not silently treated as authoritative.
+For the School Database used in this chapter, `STUDENT` must retain `ClassID` as a foreign key because the Student → Class relationship depends on it. The implemented design therefore keeps `ClassID` in `STUDENT`.
 
 ---
 
@@ -1005,7 +1005,7 @@ This is a useful checking process in examination questions.
 
 ## F. Apply It Yourself
 
-Now complete a short task similar to **Activity 8D** in the source material. No answer is provided yet.
+Now complete a short normalisation task. No answer is provided yet.
 
 Given:
 
@@ -1033,7 +1033,7 @@ Data:
 19 | Mary Cheung | mch@abc.com
 ```
 
-The source material uses this Employee database as a normalisation exercise. fileciteturn0file0L687-L713
+Use this Employee database as a normalisation exercise.
 
 ### Complete these four steps
 

@@ -15,7 +15,7 @@ Now the database begins to contain real data. The question for this module is:
 
 > How do we add data, retrieve exactly the data we need, combine several tables, and update the database?
 
-This is the role of **DML — Data Manipulation Language**. According to the source material, DML is used to **add, modify, delete and retrieve** data stored in a relational database. fileciteturn0file0L897-L904
+This is the role of **DML — Data Manipulation Language**. DML is used to **add, modify, delete and retrieve** data stored in a relational database.
 
 ## A. Learning Objectives
 
@@ -36,7 +36,7 @@ UPDATE
 DELETE FROM
 ```
 
-These are the SQL DML commands required in Chapter 8. fileciteturn0file0L992-L1011
+These are the SQL DML commands required in Chapter 8.
 
 We continue with the same School Database rather than changing to a different project.
 
@@ -72,7 +72,7 @@ DML
 → data inside that structure
 ```
 
-The source material makes the same distinction. fileciteturn0file0L908-L921
+The same distinction applies throughout this chapter.
 
 ---
 
@@ -105,7 +105,7 @@ INSERT INTO Student
 VALUES (...);
 ```
 
-The source material uses `INSERT INTO` to add a new row. fileciteturn0file0L1032-L1038
+Use `INSERT INTO` to add a new row.
 
 ### Practical version
 
@@ -156,7 +156,7 @@ VALUES (
 );
 ```
 
-The source material also shows this approach when values for all columns are not available. fileciteturn0file0L1035-L1038
+This approach is useful when values for all columns are not available.
 
 ---
 
@@ -194,7 +194,7 @@ FROM
 → from which table?
 ```
 
-The source material states that queries begin with `SELECT`. fileciteturn0file0L992-L995
+Data-retrieval queries begin with `SELECT`.
 
 ---
 
@@ -227,9 +227,9 @@ Noor  | Baig
 Tahir | Hassan
 ```
 
-`WHERE` keeps only rows that satisfy the condition. fileciteturn0file0L994-L999
+`WHERE` keeps only rows that satisfy the condition.
 
-The source material uses this same example of Students in class `7A`. fileciteturn0file0L1012-L1019
+We will continue using Students in class `7A` as the example.
 
 ---
 
@@ -258,7 +258,7 @@ SELECT FirstName, SecondName
 ORDER BY SecondName
 ```
 
-This is also a sample query in the chapter. fileciteturn0file0L1012-L1019
+This is also a sample query in the chapter.
 
 ---
 
@@ -329,38 +329,34 @@ Miss Wu  | History
 Mr Khan  | Geography
 ```
 
-`INNER JOIN` combines rows from two tables when the join condition is true. fileciteturn0file0L1000-L1006
+`INNER JOIN` combines rows from two tables when the join condition is true.
 
 ---
 
-### A note about the example in the source material
+### Practical SELECT syntax
 
-Page 213 presents the query in the form:
+When selecting multiple columns, separate them with commas rather than Boolean operators. Avoid forms such as:
 
 ```text
 SELECT Teacher.TeacherName AND Subject.SubjectName
 ```
 
-fileciteturn0file0L1020-L1023
-
-In the **supplementary practical implementation**, we use:
+Use executable SQL such as:
 
 ```sql
 SELECT Teacher.TeacherName,
        Subject.SubjectName
 ```
 
-so that the query uses conventional SQL syntax that can run in the practical environment. This is an implementation adjustment, not a silent alteration of the source content.
-
 ---
 
 ### Step 6 — JOIN across several tables
 
-Now solve a requirement similar to Activity 8H:
+Now solve the following requirement:
 
 > Display the FirstName, SecondName, and Subjects studied by each Student.
 
-The source material asks for a query of this kind. fileciteturn0file0L1029-L1031
+This requires joining Student, StudentSubject, and Subject.
 
 Relationships:
 
@@ -447,7 +443,7 @@ S1276     | History     | 70
 S1277     | Maths       | 90
 ```
 
-The chapter uses this same idea of adding `ExamMark` to demonstrate aggregate functions. fileciteturn0file0L1043-L1051
+Add `ExamMark` to demonstrate aggregate functions.
 
 ### 1. SUM
 
@@ -496,7 +492,7 @@ Result:
 3
 ```
 
-The source material describes `SUM`, `COUNT`, and `AVG` in the DML command list. fileciteturn0file0L1003-L1006
+The aggregate functions used here are `SUM`, `COUNT`, and `AVG`.
 
 ---
 
@@ -553,13 +549,13 @@ History group
 AVG for each group
 ```
 
-The source material defines `GROUP BY` as arranging data into groups. fileciteturn0file0L998-L1005
+`GROUP BY` arranges rows into groups before aggregate functions are applied.
 
 ---
 
 ## F. UPDATE — Modify Data
 
-The source material lists `UPDATE` as the command used to edit rows. fileciteturn0file0L1007-L1010
+`UPDATE` is used to edit existing rows.
 
 Suppose Ahmed moves from `7B` to `7A`.
 
@@ -592,14 +588,12 @@ If `WHERE` is omitted, more rows may be modified than intended.
 
 ## G. DELETE — Remove Data
 
-The source material gives the example:
+Example:
 
 ```sql
 DELETE FROM Student
 WHERE StudentID = 'S1301';
 ```
-
-fileciteturn0file0L1039-L1042
 
 Meaning:
 
@@ -611,7 +605,7 @@ WHERE StudentID = 'S1301'
 → which row?
 ```
 
-The source material specifically warns that `DELETE FROM Student` without a `WHERE` condition affects all rows in the table. fileciteturn0file0L1039-L1042
+`DELETE FROM Student` without a `WHERE` condition affects all rows in the table, so the condition must be checked carefully before execution.
 
 ---
 
@@ -758,7 +752,7 @@ SQL DDL
 SQL DML
 ```
 
-The source material finishes the SQL section after examples of `INSERT`, `DELETE`, `SUM`, `AVG`, and `COUNT`, then moves to the **End of chapter questions**. fileciteturn0file0L1032-L1053
+We have now covered `INSERT`, `DELETE`, `SUM`, `AVG`, `COUNT`, filtering, sorting, grouping, and joins.
 
 **Module 8** is the final integration module: we will take a database with design problems, identify its entities/keys/relationships, normalise it, build an E-R design, and write SQL — following the style of the Cambridge questions at the end of Chapter 8.
 

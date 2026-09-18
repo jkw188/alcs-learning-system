@@ -10,7 +10,7 @@ SQL DDL
 Actual database structure
 ```
 
-In the source material, **DDL — Data Definition Language** is used to create, modify, and remove the structures that form a relational database, while DML works with the data stored inside those structures. fileciteturn0file0L897-L904
+**DDL — Data Definition Language** is used to create, modify, and remove the structures that form a relational database, while DML works with the data stored inside those structures.
 
 ## A. Learning Objectives
 
@@ -30,7 +30,7 @@ PRIMARY KEY
 FOREIGN KEY ... REFERENCES ...
 ```
 
-These are the DDL commands required by the chapter. fileciteturn0file0L933-L940
+These are the DDL commands required by the chapter.
 
 ---
 
@@ -69,7 +69,7 @@ DDL = structure
 DML = data
 ```
 
-The source material makes the same distinction: DDL works with the relational database structure, while DML works with the data stored in the database. fileciteturn0file0L908-L921
+DDL works with the relational database structure, while DML works with the data stored in the database.
 
 ---
 
@@ -77,7 +77,7 @@ The source material makes the same distinction: DDL works with the relational da
 
 The chapter requires knowledge of the following data types:
 
-| Data type | Meaning in the source material |
+| Data type | Meaning |
 |---|---|
 | `CHARACTER` | fixed-length text |
 | `VARCHAR(n)` | variable-length text |
@@ -86,8 +86,6 @@ The chapter requires knowledge of the following data types:
 | `REAL` | decimal number |
 | `DATE` | date |
 | `TIME` | time |
-
-fileciteturn0file0L941-L951
 
 For example, in the School Database:
 
@@ -127,7 +125,7 @@ Christopher
 
 have different lengths, so `VARCHAR` is often more appropriate in an implementation.
 
-The chapter describes `CHARACTER` as fixed length and `VARCHAR(n)` as variable length. fileciteturn0file0L941-L950
+The chapter describes `CHARACTER` as fixed length and `VARCHAR(n)` as variable length.
 
 ---
 
@@ -188,13 +186,13 @@ Before writing SQL, notice the dependency:
 
 ### Step 2 — CREATE DATABASE
 
-According to the chapter:
+Create the database:
 
 ```sql
 CREATE DATABASE School;
 ```
 
-`CREATE DATABASE` creates a database. fileciteturn0file0L933-L936
+`CREATE DATABASE` creates a database.
 
 Then, in a DBMS such as MySQL, we select the database:
 
@@ -202,9 +200,9 @@ Then, in a DBMS such as MySQL, we select the database:
 USE School;
 ```
 
-**Note:** `USE` is not included in the DDL command list required by Table 8.13 of the chapter. It is included here only so that the MySQL practical example can run correctly.
+> **Implementation note:** `USE School;` is MySQL-specific setup used here so that the practical example can run in a concrete DBMS environment.
 
-The source material also warns that SQL commands may differ slightly between applications/DBMSs. fileciteturn0file0L922-L927
+SQL syntax can differ slightly between DBMSs.
 
 ---
 
@@ -245,7 +243,7 @@ PRIMARY KEY
 ClassID becomes the unique identifier
 ```
 
-The chapter also illustrates creating `Class` and then adding the primary key using `ALTER TABLE`. fileciteturn0file0L952-L976
+The chapter also illustrates creating `Class` and then adding the primary key using `ALTER TABLE`.
 
 ---
 
@@ -337,7 +335,7 @@ Student.ClassID = foreign key
 Class.ClassID   = referenced primary key
 ```
 
-The chapter also uses `FOREIGN KEY ... REFERENCES ...` to link Student to Class. fileciteturn0file0L952-L976
+The chapter also uses `FOREIGN KEY ... REFERENCES ...` to link Student to Class.
 
 ---
 
@@ -405,7 +403,7 @@ create table structure
 update Data Dictionary
 ```
 
-Module 5 established that DDL statements are processed by the DDL interpreter and the structure is recorded in the data dictionary. fileciteturn0file0L856-L862
+Module 5 established that DDL statements are processed by the DDL interpreter and the structure is recorded in the data dictionary.
 
 The data dictionary may now contain information such as:
 
@@ -442,8 +440,6 @@ The chapter defines them as:
 CREATE TABLE → creates a table definition
 ALTER TABLE  → changes the definition of a table
 ```
-
-fileciteturn0file0L933-L940
 
 ---
 
@@ -502,7 +498,7 @@ but:
 
 does not exist in Class, the foreign-key constraint can prevent that invalid data from being stored.
 
-This is the same **referential integrity** concept from Module 2: foreign-key values must correspond to primary-key values in the referenced table. fileciteturn0file0L305-L314
+This is the same **referential integrity** concept from Module 2: foreign-key values must correspond to primary-key values in the referenced table.
 
 ---
 
@@ -530,41 +526,31 @@ Therefore, a sensible order is:
 5. Student FK → Class PK
 ```
 
-This is also why the example in the source material adds the foreign key only after the Class table has been created. fileciteturn0file0L969-L976
+This is why the foreign key is added only after the Class table has been created.
 
 ---
 
-### 6. A detail in the source material that needs to be recognised
+### 6. Practical SQL naming and syntax
 
-The SQL example on page 212 includes a line in the form:
+Avoid identifiers with spaces and obvious spelling errors in executable SQL. For example, instead of:
 
 ```text
 Licence Number CHRACTER
 ```
 
-fileciteturn0file0L952-L968
-
-There are two practical problems if it is copied directly into a DBMS:
-
-```text
-Licence Number
-```
-
-contains a space in the identifier, and `CHRACTER` appears to be a typographical error.
-
-Therefore, in the practical implementation we use:
+use:
 
 ```sql
 LicenceNumber VARCHAR(20)
 ```
 
-This is a **supplementary implementation choice so that the example can run**, not an unannounced alteration of the chapter content.
+> **Implementation note:** the practical version uses valid, portable identifiers so that the SQL can run without special quoting.
 
 ---
 
 ## E. Apply It Yourself — Add TEACHER to the School Database
 
-Activity 8G asks the learner to create the `Teacher` table and add `LicenceNumber` as a foreign key in `Class`. fileciteturn0file0L977-L979
+Now create the `Teacher` table and add `LicenceNumber` as a foreign key in `Class`.
 
 Use this design:
 
@@ -675,6 +661,6 @@ UPDATE
 DELETE
 ```
 
-These are the commands introduced next in Section **8.3.3 SQL (DML) commands and scripts** of the source material. fileciteturn0file0L985-L1011
+These commands will be used in the next module to manipulate and query data.
 
 ---

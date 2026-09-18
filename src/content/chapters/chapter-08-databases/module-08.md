@@ -1,6 +1,6 @@
 # Module 8 — Whole-Chapter Integration: From Raw Data to SQL
 
-This is the final module of Chapter 8. It does not introduce many new concepts; instead, a problem closely related to **End of chapter question 1** in the source material is used to connect everything we have learned:
+This is the final module of Chapter 8. It does not introduce many new concepts; instead, a new software-development database problem is used to connect everything we have learned:
 
 ```text
 Unnormalised data
@@ -12,7 +12,7 @@ Unnormalised data
 → DML
 ```
 
-The source material presents a problem involving **programmers, teams, programs, and customers**, where one programmer can work on several programs and the system records how many days each programmer has worked on each program. fileciteturn0file0L1053-L1064
+The problem involves **programmers, teams, programs, and customers**, where one programmer can work on several programs and the system records how many days each programmer has worked on each program.
 
 ---
 
@@ -56,7 +56,7 @@ A company has the following rules:
    has worked on each program.
 ```
 
-These are the facts provided by the end-of-chapter problem. fileciteturn0file0L1054-L1063
+These rules define the database requirements.
 
 The first system design is:
 
@@ -70,7 +70,7 @@ NoOfDays
 Customer
 ```
 
-Example data from the source material:
+Example data:
 
 ```text
 Alice
@@ -85,7 +85,7 @@ Team PC
     Rescue Pack     8 days   BGF
 ```
 
-The source material presents this as an initial design with problems. fileciteturn0file0L1068-L1098
+This initial design has several structural problems.
 
 ---
 
@@ -116,13 +116,13 @@ According to the rule already learned:
 
 Therefore, the original table is not in 1NF.
 
-This is also part (a) of the end-of-chapter question: explain why `ProgDev` is not in 1NF. fileciteturn0file0L1098-L1104
+The first task is to explain why `ProgDev` is not in 1NF.
 
 ---
 
 ## D. Step 2 — Convert to 1NF
 
-The source material suggests separating the design into:
+Start by separating the design into:
 
 ```text
 Programmer(
@@ -141,8 +141,6 @@ Program(
     Customer
 )
 ```
-
-fileciteturn0file0L1099-L1109
 
 Represent Alice as:
 
@@ -262,7 +260,7 @@ NoOfDays
 Customer
 ```
 
-The end-of-chapter question also asks directly how the relationship between these two tables has been implemented. fileciteturn0file0L1110-L1113
+This structure shows directly how the relationship between the two tables is implemented.
 
 ---
 
@@ -346,7 +344,7 @@ ProgramName
 
 This dependency needs to be removed during further normalisation.
 
-The end-of-chapter problem also asks why the `Program` table is not in 3NF. fileciteturn0file0L1110-L1114
+The next task is to explain why the `Program` table is not yet in 3NF.
 
 ---
 
@@ -639,13 +637,13 @@ This is the logic that connects all of the content in Chapter 8.
 | JOIN/GROUP BY/aggregate functions | Module 7 |
 | Integrated database design | Module 8 |
 
-This corresponds to the learning objectives listed at the beginning of the chapter, from the limitations of the file-based approach through to SQL scripts. fileciteturn0file0L4-L21
+Together, these modules cover the complete path from file-based limitations to relational design, normalisation, DBMS concepts, DDL, and DML.
 
 ---
 
 ## Final Challenge
 
-Now use **End of chapter question 2** from the source material.
+Now complete the **Final Challenge** using the following School database design.
 
 The School has:
 
@@ -669,7 +667,7 @@ CLASS_GROUP(
 )
 ```
 
-The source material states that there is a `one-to-many` relationship between `CLASS` and `CLASS-GROUP`. fileciteturn0file0L1134-L1142
+There is a `one-to-many` relationship between `CLASS` and `CLASS_GROUP`.
 
 ### Task 1 — Keys
 
@@ -709,7 +707,7 @@ Write SQL to:
 
 > Display the `StudentID` and `FirstName` of all students in TutorGroup `10B`, sorted by `LastName`.
 
-This is a direct requirement from the end-of-chapter question. fileciteturn0file0L1143-L1145
+Use the requirements above to write the query.
 
 ### Task 4 — JOIN
 
@@ -717,12 +715,7 @@ Write SQL to:
 
 > Display the `LastName` of all students who attend the Class with `ClassID = 'CS1'`.
 
-This is also the final SQL question in the chapter. fileciteturn0file0L1146-L1149
+This final query requires you to combine relationships and SQL joins.
 
 Attempt all four parts before checking any solution. When the work is submitted for review, it should be assessed step by step through the reasoning chain `keys → relationships → JOIN`, rather than by providing only a complete answer.
 
----
-
-## Source Alignment
-
-This English Edition preserves the scope of Chapter 8: limitations of file-based storage, relational database terminology, E-R diagrams, normalisation to 3NF, DBMS features/tools, DDL, DML, and SQL. Citations in the text point to the corresponding parts of the source material.

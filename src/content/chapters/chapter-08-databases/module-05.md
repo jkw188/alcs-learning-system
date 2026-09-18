@@ -33,7 +33,7 @@ In addition, the system must:
 
 By the end of this module, you should be able to explain `DBMS`, `data dictionary`, `data modelling`, `logical schema`, `access rights`, `developer interface`, `query processor`, and the security measures provided by a DBMS.
 
-The source material defines a DBMS as systems software used for the **definition, creation and manipulation** of a database. fileciteturn0file0L754-L768
+A **DBMS** is systems software used for the **definition, creation and manipulation** of a database.
 
 ---
 
@@ -121,7 +121,7 @@ CLASS
 
 `Room 3` does not need to be copied into every Student record.
 
-A DBMS reduces duplication by storing data in separate linked tables. fileciteturn0file0L792-L799
+A DBMS reduces duplication by storing data in separate linked tables.
 
 ---
 
@@ -141,7 +141,7 @@ In a normalised database, the value needs to be updated only in the appropriate 
 
 All applications can then see the same updated data.
 
-The source material explains that storing most data items only once means that updates can be seen by all applications, improving data integrity. fileciteturn0file0L800-L804
+Storing most data items only once means that updates can be seen by all applications, improving data integrity.
 
 ---
 
@@ -171,7 +171,7 @@ The DBMS sits between the application and the physical storage.
 
 Therefore, a change to the database structure does not necessarily require every application to be rewritten.
 
-The source material calls this **data independence**. fileciteturn0file0L805-L815
+This is called **data independence**.
 
 ---
 
@@ -213,7 +213,7 @@ Type: VARCHAR
 Foreign Key: CLASS.ClassID
 ```
 
-The source material states that the data dictionary can contain definitions of tables, attributes, relationships, indexing, validation rules, and information about physical storage. fileciteturn0file0L816-L826
+The data dictionary can contain definitions of tables, attributes, relationships, indexing, validation rules, and information about physical storage.
 
 The key distinction is:
 
@@ -239,7 +239,7 @@ STUDENT M ───── 1 CLASS
 
 Data modelling is the process of analysing and defining the structures required in a database.
 
-A **logical schema** is a data model for a specific database that is **independent of the DBMS used to build it**. fileciteturn0file0L831-L834
+A **logical schema** is a data model for a specific database that is **independent of the DBMS used to build it**.
 
 For example, the design:
 
@@ -278,7 +278,7 @@ Student
 → their own personal information
 ```
 
-A DBMS provides several security measures. The source material lists usernames/passwords, access rights, database views, automatic backups, encryption, and audit trail/activity logs. fileciteturn0file0L835-L849
+A DBMS can provide security measures such as usernames/passwords, access rights, database views, automatic backups, encryption, and audit trail/activity logs.
 
 We can examine each one in the context of the School Database.
 
@@ -357,7 +357,7 @@ corruption
 
 a backup can be used to recover the data.
 
-A DBMS can automatically schedule regular backups. fileciteturn0file0L846-L849
+A DBMS can automatically schedule regular backups.
 
 ---
 
@@ -421,7 +421,7 @@ Here, **access rights** are being used to satisfy the requirement:
 
 > users should only be able to access data appropriate to their role.
 
-The source material uses this same school context and asks how a DBMS could ensure that administrators, teachers, and pupils can see only the information available to them. fileciteturn0file0L863-L871
+This School Database therefore needs role-based access so that administrators, teachers, and students can see only the information appropriate to them.
 
 ---
 
@@ -439,7 +439,7 @@ WHERE ClassID = '7A';
 
 The DBMS provides a **developer interface** for writing SQL.
 
-The source material states that the developer interface allows a developer to write SQL queries, which are then processed by the query processor. fileciteturn0file0L850-L855
+The developer interface allows a developer to write SQL queries, which are then processed by the query processor.
 
 We will practise actual SQL in Modules 6–7.
 
@@ -481,8 +481,6 @@ DML compiler
 Query evaluation engine
 ```
 
-fileciteturn0file0L856-L862
-
 ---
 
 ### 8. DDL Interpreter
@@ -513,7 +511,7 @@ DDL Interpreter
 Data Dictionary updated
 ```
 
-The source material states that DDL statements are interpreted and recorded in the database's data dictionary. fileciteturn0file0L856-L860
+DDL statements are interpreted and the resulting structure is recorded in the database's data dictionary.
 
 ---
 
@@ -538,7 +536,7 @@ The chapter also states that the compiler can:
 optimise the query
 ```
 
-meaning that it attempts to find an efficient way to execute the query. fileciteturn0file0L857-L862
+meaning that it attempts to find an efficient way to execute the query.
 
 ---
 
