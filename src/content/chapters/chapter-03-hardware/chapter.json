@@ -1,6 +1,7 @@
 {
   "id": "chapter-03-hardware",
   "title": "Chapter 3 — Hardware",
+  "number": 3,
   "overview": "Design, verify, and review a Smart Factory Safety & Training Station while learning memory, storage, input/output hardware, sensors, monitoring and control, logic gates, truth tables, and logic circuits.",
   "modules": [
     {"id":"memory-architecture","number":1,"title":"Memory Architecture","file":"module-01.md"},
